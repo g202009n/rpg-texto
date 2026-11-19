@@ -1,3 +1,4 @@
+// incompleto
 #include "proto.h"
 
 //getters
