@@ -1,5 +1,7 @@
 #pragma once
 #include "../util/util.h"
+#include "../armas/armas.h"
+#include "../inimigos/inimigos.h"
 
 enum Classe {silly = 0, random_bullshit = 1, sniper = 2, indeciso = 3};
 
@@ -62,12 +64,14 @@ class protogen {
     short bater(short agilidade, short nivel, char classe, short variavel_classe, string arma);
     short defender(short escudo, short nivel, char classe, short variavel_classe, string arma = "");
     void inspecionarPersonagem();
+    void inspecionarInimigo();
     void usarItem();
     void pegarArma(string arma);
     void pegarArmadura(string armadura);
     void pegarItem(short tamanho_mochila);
     void descartarItem();
-    void inspecionar(string item);
+    void inspecionarItem(string item);
+    void inspecionarInimigo();
     void fugir();
 
     // outros
