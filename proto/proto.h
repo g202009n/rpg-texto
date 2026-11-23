@@ -13,13 +13,18 @@ enum Classe {silly = 0, random_bullshit = 1, sniper = 2, indeciso = 3};
 
 class protogen {
     private:
+
+    inimigo inimigo;
+    inimigo_overtime inimigo_overtime;
+    inimigo_boss inimigo_boss;
+
     // variaveis
-    string nome;
-    short vida_inicial;
-    short vida;
-    short escudo;
+    string nome_proto;
+    short vida_inicial_proto;
+    short vida_proto;
+    short escudo_proto;
     short agilidade;
-    short nivel;
+    short nivel_proto;
     Classe classe;
     short variavel_classe;
 

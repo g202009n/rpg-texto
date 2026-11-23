@@ -3,19 +3,19 @@
 
 //getters
 string protogen::protogenGetterNome() {
-    return nome;
+    return nome_proto;
 }
 
 short protogen::protogenGetterVidaInicial() {
-    return vida_inicial;
+    return vida_inicial_proto;
 }
 
 short protogen::protogenGetterVida() {
-    return vida;
+    return vida_proto;
 }
 
 short protogen::protogenGetterEscudo() {
-    return escudo;
+    return escudo_proto;
 }
 
 short protogen::protogenGetterAgilidade() {
@@ -23,7 +23,7 @@ short protogen::protogenGetterAgilidade() {
 }
 
 short protogen::protogenGetterNivel() {
-    return nivel;
+    return nivel_proto;
 }
 
 Classe protogen::protogenGetterClasse() {
@@ -39,24 +39,24 @@ short protogen::protogenGetterTamanhoMochila() {
 }
 
 void protogen::protogenPrint() {
-    cout << nome;
-    cout << "   vida: " << vida;
-    cout << "   escudo: " << escudo;
+    cout << nome_proto;
+    cout << "   vida: " << vida_proto;
+    cout << "   escudo: " << escudo_proto;
     cout << "   agilidade: " << agilidade;
-    cout << "   nivel: " << nivel;
+    cout << "   nivel: " << nivel_proto;
     cout << "   classe: " << classe;
     switch(classe){
         case silly:
             cout << "   estupides: " << variavel_classe;
             break;
         case random_bullshit:
-            cout << "   estupides: " << variavel_classe;
+            cout << "   criatividade: " << variavel_classe;
             break;
         case sniper:
-            cout << "   estupides: " << variavel_classe;
+            cout << "   precisão: " << variavel_classe;
             break;
         case indeciso:
-            cout << "   estupides: " << variavel_classe;
+            cout << "   poluição: " << variavel_classe;
             break;
         default:
             cout << "erro na seleção de força da classe";
@@ -72,15 +72,15 @@ void protogen::protogenMochilaPrint(string lista) {
 
 // setters
 void protogen::protogenSetterVidaInicial(short valor) {
-    vida_inicial = valor;
+    vida_inicial_proto = valor;
 }
 
 void protogen::protogenSetterVida(short valor) {
-    vida = valor;
+    vida_proto = valor;
 }
 
 void protogen::protogenSetterEscudo(short valor) {
-    escudo = valor;
+    escudo_proto = valor;
 }
 
 void protogen::protogenSetterAgilidade(short valor) {
@@ -88,7 +88,7 @@ void protogen::protogenSetterAgilidade(short valor) {
 }
 
 void protogen::protogenSetterNivel(short valor) {
-    nivel = valor;
+    nivel_proto = valor;
 }
 
 void protogen::protogenSetterVariavelClasse(short valor) {
@@ -111,14 +111,32 @@ void protogen::protogenMochilaSetter(short posicao, string item) {
 
 
 // outros
-protogen::protogen(string nome, short vida_inicial, short escudo, short agilidade, Classe classe, short variavel_classe) {
-    this->nome = nome;
-    this-> vida_inicial = vida_inicial;
-    vida = vida_inicial;
-    this->escudo = escudo;
+protogen::protogen(string nome_proto, short vida_inicial_proto, short escudo_proto, short agilidade, Classe classe, 
+    short variavel_classe) {
+    this->nome_proto = nome_proto;
+    this-> vida_inicial_proto = vida_inicial_proto;
+    vida_proto = vida_inicial_proto;
+    this->escudo_proto = escudo_proto;
     this->agilidade = agilidade;
     this->classe = classe;
-    this->variavel_classe = variavel_classe;
+    
+    switch(classe) {
+        case silly:
+            this->variavel_classe = variavel_classe;
+            break;
+        case random_bullshit:
+            this->variavel_classe = variavel_classe;
+            break;
+        case sniper:
+            this->variavel_classe = variavel_classe;
+            break;
+        case indeciso:
+            this->variavel_classe = variavel_classe;
+            break;
+        default:
+            cout << std::endl << "erro na multiplicação das variaveis da classe";
+            exit(1);
+    }
 }
 
 protogen protogen::escolherClasse() {

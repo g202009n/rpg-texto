@@ -5,13 +5,15 @@
 
 class inimigo {
     protected:
-    short dano;
-    short vida;
-    short defesa;
-    short nivel = 1;
-    string nome;
-    string descricao;
-    short raridade;
+
+    // variaveis
+    short dano_ini;
+    short vida_ini;
+    short defesa_ini;
+    short nivel_ini = 1;
+    string nome_ini;
+    string descricao_ini;
+    short raridade_ini;
     short exp_drop;
 
     public:
@@ -37,7 +39,7 @@ class inimigo {
 };
 
 class inimigo_overtime : public inimigo {
-    private:
+    protected:
     short chance_dano_overtime;
     short dano_overtime;
 
@@ -59,9 +61,10 @@ class inimigo_boss : public inimigo_overtime {
     short chance_de_stun;
     short chance_de_defender;
     short chance_de_desviar;
-    short escudo;
+    short escudo_ini;
     public:
-    inimigo_boss(short dano, short vida, short defesa, string nome, string descricao, short raridade, 
-        short exp_drop, short chance_dano_overtime, short dano_overtime, ataque_secundario ataque_sec, 
-        short chance_de_estun, short chance_de_desviar, short chance_de_defender, short escudo);
+    inimigo_boss(short dano, short vida, short defesa, string nome, string descricao, 
+        short raridade, short exp_drop, short chance_dano_overtime, short dano_overtime, 
+        ataque_secundario ataque_sec, short chance_de_estun, short chance_de_desviar, short chance_de_defender, 
+        short escudo);
 };
