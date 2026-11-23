@@ -1,7 +1,4 @@
 #include "util.h"
-#include "./proto/proto.h"
-#include "./armas/armas.h"
-#include "./inimigos/inimigos.h"
 
 short dado(short possibilidades){
     std::random_device rd;

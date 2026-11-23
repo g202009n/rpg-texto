@@ -4,6 +4,10 @@
 #include <random>
 #include <vector>
 
+#include "./proto/proto.h"
+#include "./armas/armas.h"
+#include "./inimigos/inimigos.h"
+
 using std::cout;
 using std::cin;
 using std::string;
