@@ -35,17 +35,17 @@ bullshit areia(1, "areia", "tem chance de cegar o inimigo, fazendo ele ficar stu
 bullshit raquete_eletrica(7, "raquete eletrica", "da um grande dano e tem chance de deixar o inimigo stunado", 1, 7, 70, 3, 80);
 
 //rifles de precisão
-rifleDePrecisao::rifleDePrecisao(short dano, string nome, string descricao, short raridade, short peso, short precisao)
+rifle_de_precisao::rifle_de_precisao(short dano, string nome, string descricao, short raridade, short peso, short precisao)
     : arma(dano, nome, descricao, raridade) {
         this->peso = peso;
         this->precisao = precisao;
 }
 
-rifleDePrecisao elastico(4, "elastico", "um elastico velho que vc achou na rua", 0, 5, 2);
-rifleDePrecisao besta_palito_de_dente(6, "besta de palito de dente", "uma besta que atira palitos de dente, meio obvio", 8, 9, 4);
-rifleDePrecisao catapulta_de_genga(8, "catapulta de jenga", "uma mini catapulta que joga peças de jenga",5, 6, 9);
-rifleDePrecisao estilingue_de_brita(11, "estilingue de brita", "um estilingue que... taca brita",3, 13, 6);
-rifleDePrecisao rpg_de_confete(15, "rpg de confete", "é um laçador de confetes, so que maior", 1, 15, 10);
+rifle_de_precisao elastico(4, "elastico", "um elastico velho que vc achou na rua", 0, 5, 2);
+rifle_de_precisao besta_palito_de_dente(6, "besta de palito de dente", "uma besta que atira palitos de dente, meio obvio", 8, 9, 4);
+rifle_de_precisao catapulta_de_genga(8, "catapulta de jenga", "uma mini catapulta que joga peças de jenga",5, 6, 9);
+rifle_de_precisao estilingue_de_brita(11, "estilingue de brita", "um estilingue que... taca brita",3, 13, 6);
+rifle_de_precisao rpg_de_confete(15, "rpg de confete", "é um laçador de confetes, so que maior", 1, 15, 10);
 
 // lixos
 lixo::lixo(short dano, string nome, string descricao, short raridade, short protecao, short poluicao, short intoxicacao) 
@@ -60,3 +60,20 @@ lixo pilha(2, "pilha", "uma pilha estourada",8, 4, 5, 6);
 lixo placa_mae_velha(5, "placa mãe velha", "uma placa mãe velha pra cacete",5, 4, 8, 4);
 lixo escapamento_de_carro(8, "escapamento de carro", "um escapamento de um peugeout",3, 9, 9, 5);
 lixo hudson_hornet(11, "hudson hornet", "um carro",1, 13, 12, 7);
+
+// clone
+arma *melees::clone() const {
+    return new melees(*this);
+}
+
+arma *bullshit::clone() const {
+    return new bullshit(*this);
+}
+
+arma *rifle_de_precisao::clone() const {
+    return new rifle_de_precisao(*this);
+}
+
+arma *lixo::clone() const {
+    return new lixo(*this);
+}

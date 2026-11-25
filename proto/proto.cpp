@@ -70,12 +70,17 @@ void protogen::protogenMochilaPrint(string lista) {
     }
 }
 
+
 // setters
 void protogen::protogenSetterVidaInicial(short valor) {
     vida_inicial_proto = valor;
 }
 
 void protogen::protogenSetterVida(short valor) {
+    if (valor > vida_inicial_proto){
+        valor = vida_inicial_proto;
+    }
+
     vida_proto = valor;
 }
 
@@ -103,11 +108,14 @@ void protogenSetterArmadura(/*armadura aqui*/) {
 
 }
 
+// talvez precise arruma mais tarde
 void protogen::protogenMochilaSetter(short posicao, string item) {
     mochila[posicao] = item;
 }
 
+
 // ações
+
 
 
 // outros
@@ -119,24 +127,7 @@ protogen::protogen(string nome_proto, short vida_inicial_proto, short escudo_pro
     this->escudo_proto = escudo_proto;
     this->agilidade = agilidade;
     this->classe = classe;
-    
-    switch(classe) {
-        case silly:
-            this->variavel_classe = variavel_classe;
-            break;
-        case random_bullshit:
-            this->variavel_classe = variavel_classe;
-            break;
-        case sniper:
-            this->variavel_classe = variavel_classe;
-            break;
-        case indeciso:
-            this->variavel_classe = variavel_classe;
-            break;
-        default:
-            cout << std::endl << "erro na multiplicação das variaveis da classe";
-            exit(1);
-    }
+    this->variavel_classe = variavel_classe;
 }
 
 protogen protogen::escolherClasse() {
@@ -209,6 +200,8 @@ protogen protogen::escolherClasse() {
     }
 
     protogen protogenC(nome_protogen, inicial, escudo, agilidade, c, var_classe);
+
+    cout << std::endl;
 
     return protogenC;
 }

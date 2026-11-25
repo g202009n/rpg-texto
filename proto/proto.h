@@ -14,10 +14,6 @@ enum Classe {silly = 0, random_bullshit = 1, sniper = 2, indeciso = 3};
 class protogen {
     private:
 
-    inimigo inimigo;
-    inimigo_overtime inimigo_overtime;
-    inimigo_boss inimigo_boss;
-
     // variaveis
     string nome_proto;
     short vida_inicial_proto;
@@ -28,12 +24,14 @@ class protogen {
     Classe classe;
     short variavel_classe;
 
-    string arma;
+    arma *arma_equipada = nullptr;
     string armadura;
     std::vector<std::string> mochila;
     short tamanho_mochila = 5;
     string bullshit_bag[3];
     short exp = 0;
+
+    inimigo *inimigo_atual = nullptr;
 
     public:
     // getters
@@ -48,6 +46,7 @@ class protogen {
     short protogenGetterTamanhoMochila();
     string protogenGetterArma();
     string protogenGetterArmadura();
+    inimigo getterInimigoAtual();
 
     void protogenPrint();
     void protogenMochilaPrint(string lista);
@@ -61,22 +60,23 @@ class protogen {
     void protogenSetterVariavelClasse(short valor);
     void protogenSetterArma(/*colocar arma aqui*/);
     void protogenSetterArmadura(/*colocar armadura aqui*/);
+    void setterInimigoAtual(/*colocar inimigo aqui*/);
 
     void protogenMochilaSetter(short posicao, string item);
-    void protogenSubirDeNivel();
 
     // ações
-    short bater(short agilidade, short nivel, char classe, short variavel_classe, string arma);
-    short defender(short escudo, short nivel, char classe, short variavel_classe, string arma = "");
+    short bater(short agilidade, short nivel, char classe, short variavel_classe /*colocar arma aqui*/);
+    short defender(short escudo, short nivel, char classe, short variavel_classe /*colocar arma aqui*/);
     void inspecionarPersonagem();
     void inspecionarInimigo();
     void usarItem();
-    void pegarArma(string arma);
-    void pegarArmadura(string armadura);
+    void pegarArma(/*colocar arma*/);
+    void pegarArmadura(/*colocar armadura*/);
     void pegarItem(short tamanho_mochila);
     void descartarItem();
-    void inspecionarItem(string item);
+    void inspecionarItem(/*colocar item*/);
     void inspecionarInimigo();
+    void protogenSubirDeNivel();
     void fugir();
 
     // outros
