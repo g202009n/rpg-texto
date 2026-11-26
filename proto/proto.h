@@ -5,12 +5,6 @@
 
 enum Classe {silly = 0, random_bullshit = 1, sniper = 2, indeciso = 3};
 
-// classes:
-// silly
-// random bullshit
-// sniper
-// indeciso
-
 class protogen {
     private:
 
@@ -25,12 +19,13 @@ class protogen {
     short variavel_classe;
 
     arma *arma_equipada = nullptr;
-    string armadura;
-    std::vector<std::string> mochila;
+    string *armadura_equipada;
+    std::vector<string> mochila;
     short tamanho_mochila = 5;
     string bullshit_bag[3];
     short exp = 0;
 
+    short inimigos_abatidos = 0;
     inimigo *inimigo_atual = nullptr;
 
     public:
@@ -68,19 +63,19 @@ class protogen {
     short bater(short agilidade, short nivel, char classe, short variavel_classe /*colocar arma aqui*/);
     short defender(short escudo, short nivel, char classe, short variavel_classe /*colocar arma aqui*/);
     void inspecionarPersonagem();
-    void inspecionarInimigo();
+    void inspecionarInimigo(inimigo& ini);
     void usarItem();
     void pegarArma(/*colocar arma*/);
     void pegarArmadura(/*colocar armadura*/);
     void pegarItem(short tamanho_mochila);
     void descartarItem();
     void inspecionarItem(/*colocar item*/);
-    void inspecionarInimigo();
-    void protogenSubirDeNivel();
+    void protogenSubirDeNivel(inimigo& ini);
     void fugir();
 
     // outros
-    protogen(string nome, short vida_inicial, short escudo, short agilidade, Classe classe, short variavel_classe);
-
     static protogen escolherClasse();
+    void randomizarInimigo(inimigo& ini);
+
+    protogen(string nome, short vida_inicial, short escudo, short agilidade, Classe classe, short variavel_classe);
 };

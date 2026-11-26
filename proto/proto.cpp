@@ -115,7 +115,29 @@ void protogen::protogenMochilaSetter(short posicao, string item) {
 
 
 // ações
+void protogen::randomizarInimigo(inimigo& ini) {
+    short gerador_inimigo = dado(13);  
 
+    switch (gerador_inimigo) {
+        case 13:
+            inimigo* rx580_clone = rx
+            break;  
+        case 9:
+            break;
+        case 6:
+            break;
+        case 4:
+            break;
+        case 1:
+            break;
+        case 0:
+            break; 
+        default:
+            cout << "falha no sorteio do inimigo";
+            exit(1);
+            break;
+    }
+}
 
 
 // outros

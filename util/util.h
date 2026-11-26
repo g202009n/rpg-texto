@@ -11,4 +11,4 @@ using std::cin;
 using std::string;
 
 short dado(short possibilidades);
-void atualizarDadosInimigos(inimigo& ini);
+void atualizarDadosInimigos(inimigo& ini, protogen& p);
