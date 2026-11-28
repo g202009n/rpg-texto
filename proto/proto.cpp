@@ -1,6 +1,9 @@
 // incompleto
 #include "proto.h"
 
+class arma;
+class inimigo;
+
 //getters
 string protogen::protogenGetterNome() {
     return nome_proto;
@@ -120,7 +123,6 @@ void protogen::randomizarInimigo(inimigo& ini) {
 
     switch (gerador_inimigo) {
         case 13:
-            inimigo* rx580_clone = rx
             break;  
         case 9:
             break;

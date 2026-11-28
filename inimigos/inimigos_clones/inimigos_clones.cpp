@@ -1,4 +1,5 @@
 #include "./inimigos_cones.h"
+#include "../inimigos.h"
 
 static inimigo rx_580(4, 9, 3, "rx 580", "uma rx 580 minerada ate o talo", 13, 25);
 static inimigo mendigo(5, 12, 2, "mendigo", "espero q ele n tenha usado nada", 9, 30);

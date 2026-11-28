@@ -1,7 +1,7 @@
 #pragma once
 #include "../util/util.h"
 #include "../armas/armas.h"
-#include "../inimigos/inimigos.h"
+#include "../inimigos/inimigos_clones/inimigos_cones.h"
 
 enum Classe {silly = 0, random_bullshit = 1, sniper = 2, indeciso = 3};
 

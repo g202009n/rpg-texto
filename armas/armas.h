@@ -1,6 +1,5 @@
 #pragma once
 #include "../util/util.h"
-#include "../proto/proto.h"
 
 class arma {
     protected:

@@ -28,7 +28,7 @@ bullshit::bullshit(short dano, string nome, string descricao, short raridade, sh
 }
 
 bullshit tampa_de_garrafa(2, "tampa de garrafa", "uma tampa de garrafa um pouco afiada", 0, 1, 0, 0, 0);
-bullshit gato(3, "gato", "tem chance de arranhar e causar sangramento no inimigo", 8, 2, 3, 0, 0);
+bullshit gato_bullshit(3, "gato", "tem chance de arranhar e causar sangramento no inimigo", 8, 2, 3, 0, 0);
 bullshit amendoim(1, "amendoim", "tem chance de causa alergia no inimigo", 5, 3, 40, 7, 20);
 bullshit caco_de_vidro(3, "caco de vidro", "alta chance de causar sangramento no inimigo", 4, 4, 70, 3, 0);
 bullshit areia(1, "areia", "tem chance de cegar o inimigo, fazendo ele ficar stunado", 3, 5, 20, 1, 55);

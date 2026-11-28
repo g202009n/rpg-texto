@@ -1,7 +1,8 @@
 // incompleto
 #pragma once
 #include "../util/util.h"
-#include "../proto/proto.h"
+
+class protogen;
 
 class inimigo {
     protected:
@@ -46,6 +47,8 @@ class inimigo {
     void inimigoSetterNivel(short valor);
     void inimigoSetterExpDrop(short valor);
 
+    void atualizarDadosInimigos(inimigo& ini);
+    
     virtual void inimigoOvertimeSetterChanceOvertime(short valor);
     virtual void inimigoOvertimeSetterDanoOvertime(short valor);
 

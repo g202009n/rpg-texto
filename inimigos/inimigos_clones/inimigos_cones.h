@@ -1,4 +1,5 @@
 #include "../../util/util.h"
-#include "../inimigos.h"
+
+class inimigo;
 
 inimigo *clonarRx580();
